@@ -1,0 +1,6 @@
+<div class="task-list" ng-repeat="task in tasks.allTasks">{{task.$value}}</div>
+<div class="new-task-wrapper">
+    <h3>Add A New Task</h3>
+    <input type="text" class="form-field" ng-model="tasks.newTask" ng-keypress="tasks.checkKey($event)">
+    <button ng-click="tasks.addTask()">Add Task</button>
+</div>
