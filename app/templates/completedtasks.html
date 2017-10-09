@@ -1,0 +1,6 @@
+<h2>Completed Tasks</h2>
+    <div class="task-item" ng-repeat="task in tasks.allTasks" ng-show="tasks.isCompleted(task)">
+        {{task.taskName}}
+        <!-- delete button doesn't work yet -->
+        <div class="task-buttons"><button>Delete</button></div>
+    </div>

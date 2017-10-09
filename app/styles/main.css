@@ -1,0 +1,8 @@
+.task-item {
+    padding: 10px;
+    border: 2px solid black;
+}
+
+.task-buttons {
+    float: right;
+}

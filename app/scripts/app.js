@@ -11,7 +11,19 @@
                  url: '/tasks',
                  controller: 'TaskCtrl as tasks',
                  templateUrl: '/templates/tasks.html'
-            });
+            })
+         
+            .state('expired', {
+                 url: '/expiredtasks',
+                 controller: 'TaskCtrl as tasks',
+                 templateUrl: '/templates/expiredtasks.html'
+            })
+         
+            .state('completed', {
+                 url: '/completedtasks',
+                 controller: 'TaskCtrl as tasks',
+                 templateUrl: '/templates/completedtasks.html'
+            })
      }
      
      angular

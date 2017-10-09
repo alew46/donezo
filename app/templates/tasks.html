@@ -1,6 +1,11 @@
-<div class="task-list" ng-repeat="task in tasks.allTasks">{{task.$value}}</div>
-<div class="new-task-wrapper">
-    <h3>Add A New Task</h3>
-    <input type="text" class="form-field" ng-model="tasks.newTask" ng-keypress="tasks.checkKey($event)">
-    <button ng-click="tasks.addTask()">Add Task</button>
-</div>
+<h2>Active Tasks</h2>
+    <div class="task-item" ng-repeat="task in tasks.allTasks" ng-hide="tasks.isExpired(task) || tasks.isCompleted(task)">
+        {{task.taskName}}
+        <!-- delete button doesn't work yet -->
+        <div class="task-buttons"><button>Delete</button> | <button ng-click="tasks.completeTask(task)">Completed</button></div>
+    </div>
+    <div class="new-task-wrapper">
+        <h3>Add A New Task</h3>
+        <input type="text" class="form-field" ng-model="tasks.newTask" ng-keypress="tasks.checkKey($event)">
+        <button ng-click="tasks.addTask()">Add Task</button>
+    </div>
