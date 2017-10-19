@@ -1,3 +1,6 @@
 <h2>Expired Tasks</h2>
-<div class="task-list" ng-repeat="task in tasks.allTasks" ng-show="tasks.isExpired(task)">{{task.taskName}}</div>
+<div class="task-item" ng-repeat="task in tasks.allTasks" ng-show="tasks.isExpired(task)">
+    {{task.taskName}}
+    <div class="task-buttons"><button ng-click="tasks.deleteTask(task)">Delete</button> | <button ng-click="tasks.reactivateTask(task)">Reactivate</button></div>
+</div>
     

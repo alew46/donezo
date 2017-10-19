@@ -39,6 +39,10 @@
         this.deleteTask = function(task) {
             Task.deleteFromBase(task);
         }
+        
+        this.reactivateTask = function(task) {
+            Task.setNewTimestamp(task);
+        }
     }
             
     angular

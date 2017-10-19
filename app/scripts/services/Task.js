@@ -30,6 +30,10 @@
             ref.child(task.$id).remove();
         }
         
+        Task.setNewTimestamp = function(task) {
+            ref.child(task.$id).update({created_at: firebase.database.ServerValue.TIMESTAMP});    
+        }
+        
 //        Task.isExpired = function(task) {
 //            return task.expired;
 //        }
