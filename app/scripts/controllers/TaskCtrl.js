@@ -35,6 +35,10 @@
             Task.markCompleted(task);
             // console.log("this task is now completed:", task.completed)
         }
+        
+        this.deleteTask = function(task) {
+            Task.deleteFromBase(task);
+        }
     }
             
     angular

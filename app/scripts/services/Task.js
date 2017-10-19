@@ -26,6 +26,10 @@
             ref.child(task.$id).update({completed: true});    
         }
         
+        Task.deleteFromBase = function(task) {
+            ref.child(task.$id).remove();
+        }
+        
 //        Task.isExpired = function(task) {
 //            return task.expired;
 //        }

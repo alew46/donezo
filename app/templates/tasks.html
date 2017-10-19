@@ -2,7 +2,7 @@
     <div class="task-item" ng-repeat="task in tasks.allTasks" ng-hide="tasks.isExpired(task) || tasks.isCompleted(task)">
         {{task.taskName}}
         <!-- delete button doesn't work yet -->
-        <div class="task-buttons"><button>Delete</button> | <button ng-click="tasks.completeTask(task)">Completed</button></div>
+        <div class="task-buttons"><button ng-click="tasks.deleteTask(task)">Delete</button> | <button ng-click="tasks.completeTask(task)">Completed</button></div>
     </div>
     <div class="new-task-wrapper">
         <h3>Add A New Task</h3>
