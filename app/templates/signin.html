@@ -1,0 +1,15 @@
+<div>
+  Email: <input type="text" ng-model="auth.email">
+  Password: <input type="text" ng-model="auth.password">
+
+  <br><br>
+
+  <button ng-click="auth.createUser()">Create User</button>
+
+  <br><br>
+
+  <button ng-click="auth.deleteUser()">Delete User</button>
+
+  <p ng-if="message">Message: <strong>{{ message }}</strong></p>
+  <p ng-if="error">Error: <strong>{{ error }}</strong></p>
+</div>

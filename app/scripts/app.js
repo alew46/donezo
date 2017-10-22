@@ -7,6 +7,12 @@
               });
  
          $stateProvider
+            .state('signin', {
+                 url: '/signin',
+                 controller: 'AuthCtrl as auth',
+                 templateUrl: '/templates/signin.html'
+            })
+             
             .state('task', {
                  url: '/tasks',
                  controller: 'TaskCtrl as tasks',
