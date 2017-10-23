@@ -2,12 +2,12 @@
     function Auth($firebaseAuth) {
         var Auth = {};
         
-        Auth.$createUserWithEmailAndPassword(email, password)
-                .then(function(firebaseUser) {
-                  this.message = "User created with uid: " + firebaseUser.uid;
-                }).catch(function(error) {
-                  this.error = error;
-                });
+        Auth.$createUserWithEmailAndPassword(Auth.email, Auth.password)
+        .then(function(firebaseUser) {
+          Auth.message = "User created with uid: " + firebaseUser.uid;
+        }).catch(function(error) {
+          Auth.error = error;
+        });
         
         return Auth;
     }
