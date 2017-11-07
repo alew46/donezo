@@ -1,5 +1,5 @@
 (function() {
-    function AuthCtrl(Auth) {
+    function AuthCtrl(Auth, User) {
         
         this.createUser = function() {
             console.log("controller createUser is firing")
@@ -7,15 +7,22 @@
             this.message = null;
             this.error = null;
         
-            Auth.$createUserWithEmailAndPassword(this.email, this.password);
+            Auth.createUserWithEmailAndPassword(this.email, this.password).then(function (message) {
+                console.log("Success", message);
+                window.location = 'tasks';
+            }).catch(function (error) {
+                console.log("We got an error", error);
+            });
             
         }
         
+        
+        this.userEmail = User.email;
 
         
     }
             
     angular
         .module('donezo')
-        .controller('AuthCtrl', ['Auth', AuthCtrl]);
+        .controller('AuthCtrl', ['Auth', 'User', AuthCtrl]);
 })();

@@ -1,15 +1,20 @@
 (function() {
     function Auth($firebaseAuth) {
         var Auth = {};
-        
-        Auth.$createUserWithEmailAndPassword(Auth.email, Auth.password)
-        .then(function(firebaseUser) {
-          Auth.message = "User created with uid: " + firebaseUser.uid;
-        }).catch(function(error) {
-          Auth.error = error;
-        });
+        var auth = $firebaseAuth();
+                
+        Auth.createUserWithEmailAndPassword = function (email, password) {
+            return auth.$createUserWithEmailAndPassword(email, password)
+            .then(function(firebaseUser) {
+              return "User created with uid: " + firebaseUser.uid;
+            }).catch(function(error) {
+              throw error;
+            });
+        };
+                
         
         return Auth;
+
     }
     
     angular
