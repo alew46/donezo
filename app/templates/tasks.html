@@ -1,12 +1,30 @@
-<div id="user-signed-in">anything</div>
-<h2>Active Tasks</h2>
-    <div class="task-item" ng-repeat="task in tasks.allTasks" ng-hide="tasks.isExpired(task) || tasks.isCompleted(task)">
-        {{task.taskName}}
-        <!-- delete button now working -->
-        <div class="task-buttons"><button ng-click="tasks.deleteTask(task)">Delete</button> | <button ng-click="tasks.completeTask(task)">Completed</button></div>
+<div class="container main-content">
+    <div class="card">
+        <h3 class="card-header">Active Tasks</h3>
+        <div class="card-body task-item" ng-repeat="task in tasks.allTasks" ng-hide="tasks.isExpired(task) || tasks.isCompleted(task)">
+            <div class="task-name">
+                {{task.taskName}}
+            </div>
+            <!-- delete button now working -->
+            <div class="task-buttons">
+                <i class="fa fa-times fa-2x task-icon" aria-hidden="true" ng-click="tasks.deleteTask(task)"></i>  <i class="fa fa-check fa-2x task-icon" aria-hidden="true" ng-click="tasks.completeTask(task)"></i>
+            </div>
+            <!-- <div class="description-tray">
+                ~testing~
+            </div> -->
+        </div>
     </div>
-    <div class="new-task-wrapper">
-        <h3>Add A New Task</h3>
-        <input type="text" class="form-field" ng-model="tasks.newTask" ng-keypress="tasks.checkKey($event)">
-        <button ng-click="tasks.addTask()">Add Task</button>
+
+    <div class="card task-card">
+        <h5 class="card-header">Add A New Task</h5>
+        <div class="card-body">
+            <input type="text" placeholder="Enter task name..." class="form-field fill" ng-model="tasks.newTask" ng-keypress="tasks.checkKey($event)">
+        </div>
+        <div class="card-body">
+            <input type="text" placeholder="Enter task description..." class="form-field fill" ng-keypress="tasks.checkKey($event)">
+        </div>
+        <div class="card-footer bg-primary text-white" ng-click="tasks.addTask()">
+            Add Task
+        </div>
     </div>
+</div>

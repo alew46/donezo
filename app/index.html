@@ -4,14 +4,35 @@
     <meta charset="UTF-8">
     <title>Bloc Base Project</title>
     <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="https://bootswatch.com/4/united/bootstrap.min.css">
 </head>
 <body>
-    <h1>Donezo</h1>
-    <div id="main-nav-bar">
-        <a href="/tasks">Active Tasks</a>
-        <a href="/expiredtasks">Expired Tasks</a>
-        <a href="/completedtasks">Completed Tasks</a>
+    
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  
+    <a class="navbar-brand" href="/tasks">Donezo</a>
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/tasks">My Tasks</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/expiredtasks">Expired Tasks</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/completedtasks">Completed Tasks</a>
+            </li>
+        </ul>
     </div>
+  
+</nav>    
+
+
     <ui-view></ui-view>
     <!-- Angular -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
@@ -24,7 +45,15 @@
      
     <!-- AngularFire -->
     <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+    
+    <!-- jQuery & Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 
+    
+    <!-- Font Awesome -->
+    <script src="https://use.fontawesome.com/7b2437728b.js"></script>
 
     <!-- Application Files -->
     <script src="/scripts/app.js"></script>
@@ -43,7 +72,7 @@
       firebase.initializeApp(config);
     </script>
     
-    <!-- Task Array from Task Factory Service -->
+    <!-- Services -->
     <script src="/scripts/services/Task.js"></script>
     <script src="/scripts/services/Auth.js"></script>
     <script src="/scripts/services/User.js"></script>

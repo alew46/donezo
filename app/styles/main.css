@@ -1,8 +1,68 @@
 .task-item {
     padding: 10px;
-    border: 2px solid black;
+    border-bottom: 1px solid lightgrey;
+    border-bottom-width: 20%
 }
 
 .task-buttons {
     float: right;
+    width: 20%;
+    text-align: right
+}
+
+.description-tray {
+    width: 100%;
+    background-color: lightgrey;
+}
+
+.task-card {
+    margin-top: 20px;
+    position: relative;
+    margin-bottom: 20px;
+
+}
+
+.card {
+    margin-bottom: 20px;
+}
+
+.card-body { 
+    border-bottom: 1px solid rgba(0,0,0,0.125);
+}
+
+.card-body * { 
+    position: relative;
+}
+
+.card-footer {
+    background-color: #e85328;
+    text-align: center;
+}
+
+
+.fill {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    border: 0;
+}
+
+.main-content {
+    margin-top: 20px;
+}
+
+.task-name {
+    float: left;
+    width: 60%;
+}
+
+.task-icon {
+    margin-right: 4px;
+    margin-left: 4px;
+}
+
+.task-icon:hover {
+    color: green;
 }

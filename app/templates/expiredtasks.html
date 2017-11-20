@@ -1,6 +1,10 @@
-<h2>Expired Tasks</h2>
-<div class="task-item" ng-repeat="task in tasks.allTasks" ng-show="tasks.isExpired(task)">
-    {{task.taskName}}
-    <div class="task-buttons"><button ng-click="tasks.deleteTask(task)">Delete</button> | <button ng-click="tasks.reactivateTask(task)">Reactivate</button></div>
-</div>
-    
+<div class="container main-content">
+    <div class="card">
+        <h3 class="card-header">Expired Tasks</h3>
+            <div class="card-body task-item" ng-repeat="task in tasks.allTasks" ng-show="tasks.isExpired(task)">
+                {{task.taskName}}
+                <div class="task-buttons">
+                    <i class="fa fa-times fa-2x task-icon" aria-hidden="true" ng-click="tasks.deleteTask(task)"></i> <i class="fa fa-clock-o fa-2x task-icon" ng-click="tasks.reactivateTask(task)"></i>
+                </div>
+            </div>
+    </div>
