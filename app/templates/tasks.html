@@ -4,6 +4,9 @@
         <div class="card-body task-item" ng-repeat="task in tasks.allTasks" ng-hide="tasks.isExpired(task) || tasks.isCompleted(task)">
             <div class="task-name">
                 {{task.taskName}}
+                <div class="task-description">
+                TESTING
+                </div>
             </div>
             <!-- delete button now working -->
             <div class="task-buttons">

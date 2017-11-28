@@ -1,6 +1,7 @@
 (function() {
     function TaskCtrl(Task) {
         this.allTasks = Task.getAll();
+        // this.userTasks = Task.getUserTasks();
         this.newTask = null; // the ng-model for the input of the new task
         
         this.addTask = function() {
@@ -43,8 +44,19 @@
         this.reactivateTask = function(task) {
             Task.setNewTimestamp(task);
         }
+        
+        this.currentUserId = function() {
+            return Task.getCurrentUserId;
+        }
     }
-            
+    
+    $('.task-name').click(function(){
+       var $dsctray = $('.task-description');
+        $dsctray.animate({
+          top: 0
+        });
+    });
+    
     angular
         .module('donezo')
         .controller('TaskCtrl', ['Task', TaskCtrl]);

@@ -1,16 +1,14 @@
 (function() {
-    function User($firebaseUser) {
-        var User = {};
-                
-        var firebaseUser = $firebaseUser();
-                
-        var currentUser = firebaseUser.getInstance().getCurrentUser();
+    function User($firebaseAuth) {
+        var User = {
+            email: null
+        };
         
-        if (currentUser != null) {
-            // Name, email address, and profile photo Url
-            var email = currentUser.getEmail();
-            return email;
-        }
+            
+                
+        // var currentUser = "test";
+        
+        
         
         return User;
 
@@ -18,5 +16,5 @@
     
     angular
         .module('donezo')
-        .factory('User', ['$firebaseUser', User]);
+        .factory('User', ['$firebaseAuth', User]);
 })();

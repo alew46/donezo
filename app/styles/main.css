@@ -56,6 +56,8 @@
 .task-name {
     float: left;
     width: 60%;
+    height: auto;
+    cursor: pointer;
 }
 
 .task-icon {
@@ -65,4 +67,12 @@
 
 .task-icon:hover {
     color: green;
+}
+
+
+.task-description {
+    top: -999px;
+    background-color: gainsboro;
+    opacity: .8;
+    width: 100%;
 }
