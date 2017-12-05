@@ -25,6 +25,11 @@
             
         }
         
+        this.signOutUser = function () {
+            
+            Auth.logUserOut();
+            
+        }
         
     }
             

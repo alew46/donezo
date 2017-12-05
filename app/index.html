@@ -31,7 +31,8 @@
     </div>
     
     <div class="pull-right" ng-controller="NavCtrl as nav">
-        {{nav.loggedInUser.email}}
+        <span style="color:white;" ng-click="nav.testFunction()">{{nav.loggedInUser.email}}
+            <button ng-controller="AuthCtrl as auth" ng-show="nav.loggedInUser" ng-click="auth.signOutUser()" style="cursor:pointer">Log Out</button></span>
     </div>
   
 </nav>    

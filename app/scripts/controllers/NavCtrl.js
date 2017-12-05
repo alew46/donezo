@@ -11,6 +11,11 @@
         //debugger;
         
         return NavCtrl;
+        
+        this.testFunction = function() {
+            console.log("logUserOut in NavCtrl is firing")
+        }
+        
     }
     
     angular.module("donezo")

@@ -31,7 +31,12 @@
          // is this the right function name?
           auth.$onAuthStateChanged(fn);  
         };
-                
+        
+        Auth.logUserOut = function() {
+            firebase.auth().signOut().then(function() {
+                window.location="signin"
+            });
+        };
         
         return Auth;
 
