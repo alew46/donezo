@@ -1,6 +1,15 @@
 (function() {
-    function TaskCtrl(Task) {
-        this.allTasks = Task.getAll();
+    function TaskCtrl(Task, Auth) {
+        // an event you can hook up to for logged in user state 
+        // it's on firebaseAuth
+        Auth.onAuthStateChanged(function () {
+            console.log("It changed");
+            this.allTasks = Task.getUserTasks();
+            window.allTasks = this.allTasks;
+        }.bind(this));
+        
+        this.allTasks = Task.getUserTasks();       
+        
         // this.userTasks = Task.getUserTasks();
         this.newTask = null; // the ng-model for the input of the new task
         
@@ -59,5 +68,5 @@
     
     angular
         .module('donezo')
-        .controller('TaskCtrl', ['Task', TaskCtrl]);
+        .controller('TaskCtrl', ['Task', 'Auth', TaskCtrl]);
 })();

@@ -16,9 +16,15 @@
             
         }
         
+        this.signInUser = function () {
+            
+            this.message = null;
+            this.error = null;
+            
+            Auth.signInWithEmailAndPassword(this.newEmail, this.newPassword);
+            
+        }
         
-        this.userEmail = User.email;
-
         
     }
             

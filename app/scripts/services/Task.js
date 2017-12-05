@@ -9,7 +9,12 @@
         };
         
         Task.getUserTasks = function() {
-             return firebase.database().ref().child("tasks").orderByChild("user_id").equalTo(firebase.auth().currentUser.uid);
+            if (firebase.auth().currentUser) {
+                console.log("Task.getUserTasks called and a logged in user exists", firebase.auth().currentUser);
+                return $firebaseArray(firebase.database().ref().child("tasks").orderByChild("user_id").equalTo(firebase.auth().currentUser.uid));
+            }
+            
+            return [];
         };
         
         //var tasks = firebase.database().ref().child("tasks").orderByChild("user_id").equalTo(firebase.auth().currentUser.uid);

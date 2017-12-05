@@ -1,18 +1,29 @@
-<div id="user-signed-in">User signed in: {{ auth.currentUser }}</div>
+<div style="width: 100%;">
 
+    <div style="width: 50%; border: 2px solid black;">
 
-<div>
-  Email: <input type="text" ng-model="auth.email">
-  Password: <input type="text" ng-model="auth.password">
+        <h1>Sign In</h1>
 
-  <br><br>
+        Email: <input type="text" ng-model="auth.newEmail">
+        Password: <input type="password" ng-model="auth.newPassword">
 
-  <button ng-click="auth.createUser()">Create User</button>
+        <button ng-click="auth.signInUser()">Sign In</button>
 
-  <br><br>
+    </div>
 
-  <button ng-click="auth.deleteUser()">Delete User</button>
+    <div style="width:50%;">
+      Email: <input type="text" ng-model="auth.email">
+      Password: <input type="password" ng-model="auth.password">
 
-  <p ng-if="message">Message: <strong>{{ message }}</strong></p>
-  <p ng-if="error">Error: <strong>{{ error }}</strong></p>
+      <br><br>
+
+      <button ng-click="auth.createUser()">Create User</button>
+
+      <br><br>
+
+      <button ng-click="auth.deleteUser()">Delete User</button>
+
+      <p ng-if="message">Message: <strong>{{ message }}</strong></p>
+      <p ng-if="error">Error: <strong>{{ error }}</strong></p>
+    </div>
 </div>

@@ -13,6 +13,24 @@
               throw error;
             });
         };
+        
+        Auth.signInWithEmailAndPassword = function (newEmail, newPassword) {
+            return firebase.auth().signInWithEmailAndPassword(newEmail, newPassword).then( function() {
+                window.location="tasks"})
+                .catch(function(error) {
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+});
+        }
+        
+        console.log(">>>>>>>>AUTH:", auth);
+        
+        Auth.onAuthStateChanged = function (fn) {
+            console.log("Auth.onStateChange called successfully", fn);
+         // is this the right function name?
+          auth.$onAuthStateChanged(fn);  
+        };
                 
         
         return Auth;
