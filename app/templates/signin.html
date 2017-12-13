@@ -3,15 +3,30 @@
     <div class="signin-inner">
         
         <h1>Get Started with Donezo</h1>
+        
+        <hr style="width: 25%;">
+        
+        <p>
+            Donezo lets you create a dead simple to-do list. Tasks automatically expire after 7 days if you don't complete them. This strategy is loosely based on the <a href="https://lifehacker.com/5914877/stop-wasting-time-by-applying-the-pareto-principle-to-your-task-list" target="_blank">Pareto Principle</a>, which (sort of) states that on any given to-do list, 80% of the tasks don't really need to be on there.
+        </p>
+        <p>
+            So, Donezo automatically archives the stuff that wasn't important enough for you to focus on in a week. The archived tasks are still available, under the Expired Tasks tab. You can reactivate them when you're ready for them.
+            
+            Sign up  or log in below to get started.
+        </p>
+        
+        <hr style="width: 25%;">
 
-        <h2 class="signin-head">Already have an account?</h2>
+        <h2 class="signin-head">Already have an account? Sign in.</h2>
 
         Email: <input type="text" ng-model="auth.newEmail">
         Password: <input type="password" ng-model="auth.newPassword">
 
-        <button ng-click="auth.signInUser()">Sign In</button>
+        <button class="btn btn-primary" style="margin-top: 20px;" ng-click="auth.signInUser()">Sign In</button>
 
     </div>
+    
+    <hr style="width: 25%;">
 
     <div class="signin-inner">
         
@@ -19,7 +34,7 @@
         Email: <input type="text" ng-model="auth.email">
         Password: <input type="password" ng-model="auth.password">
 
-        <button ng-click="auth.createUser()">Create User</button>
+        <button class="btn btn-primary" style="margin-top: 20px;" ng-click="auth.createUser()">Create User</button>
 
         <p ng-if="message">Message: <strong>{{ message }}</strong></p>
         <p ng-if="error">Error: <strong>{{ error }}</strong></p>

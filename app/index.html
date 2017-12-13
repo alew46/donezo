@@ -2,7 +2,7 @@
 <html ng-app="donezo">
 <head lang="en">
     <meta charset="UTF-8">
-    <title>Bloc Base Project</title>
+    <title>Donezo - Simple Task Lists</title>
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="https://bootswatch.com/4/united/bootstrap.min.css">
 </head>
@@ -32,7 +32,7 @@
     
     <div class="pull-right" ng-controller="NavCtrl as nav">
         <span style="color:white;" ng-click="nav.testFunction()">{{nav.loggedInUser.email}}
-            <button ng-controller="AuthCtrl as auth" ng-show="nav.loggedInUser" ng-click="auth.signOutUser()" style="cursor:pointer">Log Out</button></span>
+            <button class="btn btn-secondary" ng-controller="AuthCtrl as auth" ng-show="nav.loggedInUser" ng-click="auth.signOutUser()" style="cursor:pointer">Log Out</button></span>
     </div>
   
 </nav>    
