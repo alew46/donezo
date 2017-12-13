@@ -14,8 +14,9 @@
         this.newTask = null; // the ng-model for the input of the new task
         
         this.addTask = function() {
-            Task.add(this.newTask);
-            this.newTask = "";
+            Task.add(this.newTask.task, this.newTask.description);
+            this.newTask.task = "";
+            this.newTask.description = "";
         };
         
         this.checkKey = function (event) {

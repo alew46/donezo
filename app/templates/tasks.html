@@ -5,8 +5,9 @@
             <div ng-class="{'hiddenDesc': true, 'visibleDesc': task.isVisible}"></div>
             <div class="task-name">
                 {{task.taskName}}
+                <br/>
                 <div ng-class="{'hiddenDesc': true, 'visibleDesc': task.isVisible, 'task-desc-text': true}">
-                    test desc test desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desc
+                    {{task.taskDescription}}
                 </div>
             </div>
             <!-- delete button now working -->
@@ -22,10 +23,10 @@
     <div class="card task-card">
         <h5 class="card-header">Add A New Task</h5>
         <div class="card-body">
-            <input type="text" placeholder="Enter task name..." class="form-field fill" ng-model="tasks.newTask" ng-keypress="tasks.checkKey($event)">
+            <input type="text" placeholder="Enter task name..." class="form-field fill" ng-model="tasks.newTask.task" ng-keypress="tasks.checkKey($event)">
         </div>
         <div class="card-body">
-            <input type="text" placeholder="Enter task description..." class="form-field fill" ng-keypress="tasks.checkKey($event)">
+            <input type="text" placeholder="Enter task description..." class="form-field fill" ng-model="tasks.newTask.description" ng-keypress="tasks.checkKey($event)">
         </div>
         <div class="card-footer bg-primary text-white" ng-click="tasks.addTask()">
             Add Task

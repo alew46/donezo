@@ -23,13 +23,14 @@
         
         Task.all = tasks;
         
-        Task.add = function(task) {
+        Task.add = function(task, description) {
                     var auth = $firebaseAuth();
 
             
-            console.log(">>>>>>", task)
+            console.log(">>>>>>", task, description)
             tasks.$add({
                 taskName: task,
+                taskDescription: description,
                 expired: false,
                 completed: false,
                 created_at: firebase.database.ServerValue.TIMESTAMP,
