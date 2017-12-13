@@ -76,3 +76,12 @@
     opacity: .8;
     width: 100%;
 }
+
+#signin-wrapper {
+    background-color: lightgray;
+    padding: 50px;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 25px;
+    text-align: center;
+}
