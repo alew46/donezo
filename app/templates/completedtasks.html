@@ -4,7 +4,7 @@
             <div class="card-body task-item" ng-repeat="task in tasks.allTasks" ng-show="tasks.isCompleted(task)">
                 {{task.taskName}}
                 <div class="task-buttons">
-                    <i class="fa fa-times fa-2x task-icon" aria-hidden="true" ng-click="tasks.deleteTask(task)"></i>
+                    <i class="fa fa-times fa-2x task-icon task-icon-delete" aria-hidden="true" ng-click="tasks.deleteTask(task)"></i>
                 </div>
             </div>
     </div>

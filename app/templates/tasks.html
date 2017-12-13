@@ -1,16 +1,17 @@
 <div class="container main-content">
     <div class="card">
         <h3 class="card-header">Active Tasks</h3>
-        <div class="card-body task-item" ng-repeat="task in tasks.allTasks" ng-hide="tasks.isExpired(task) || tasks.isCompleted(task)">
+        <div class="card-body task-item" ng-repeat="task in tasks.allTasks" ng-hide="tasks.isExpired(task) || tasks.isCompleted(task)" ng-click="task.isVisible = !task.isVisible">
+            <div ng-class="{'hiddenDesc': true, 'visibleDesc': task.isVisible}"></div>
             <div class="task-name">
                 {{task.taskName}}
-                <div class="task-description">
-                TESTING
+                <div ng-class="{'hiddenDesc': true, 'visibleDesc': task.isVisible, 'task-desc-text': true}">
+                    test desc test desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desctest desc
                 </div>
             </div>
             <!-- delete button now working -->
             <div class="task-buttons">
-                <i class="fa fa-times fa-2x task-icon" aria-hidden="true" ng-click="tasks.deleteTask(task)"></i>  <i class="fa fa-check fa-2x task-icon" aria-hidden="true" ng-click="tasks.completeTask(task)"></i>
+                <i class="fa fa-times fa-2x task-icon task-icon-delete" aria-hidden="true" ng-click="tasks.deleteTask(task)"></i>  <i class="fa fa-check fa-2x task-icon task-icon-complete" aria-hidden="true" ng-click="tasks.completeTask(task, $event)"></i>
             </div>
             <!-- <div class="description-tray">
                 ~testing~

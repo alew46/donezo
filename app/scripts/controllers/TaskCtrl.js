@@ -41,7 +41,8 @@
             return task.completed;
         }
         
-        this.completeTask = function(task) {
+        this.completeTask = function(task, event) {
+            event.stopPropagation();
             Task.markCompleted(task);
             // console.log("this task is now completed:", task.completed)
         }
